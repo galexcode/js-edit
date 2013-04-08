@@ -1,0 +1,31 @@
+body {
+    background-color:lightgrey;
+}
+
+#editor_div {
+    border-top: 0.1em solid black;
+    border-right:0.1em solid black;
+    border-left:0.1em solid black;
+    bottom:0em;
+    height:20em;
+    background-color:white;
+    /*height:100%;*/
+}
+
+#content {
+    bottom:0em;
+ /*   height:100%;*/
+}
+
+.style_button {
+    border:0.1em solid silver;
+    border-radius:0.2em;
+    font-weight:bold;
+    margin-bottom:0.4em;
+    margin-left:2.4em;
+}
+
+.style_bar {
+    /*position:relative;
+    margin-bottom:1.4em;*/
+}
