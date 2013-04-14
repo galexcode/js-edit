@@ -8,12 +8,23 @@ $(document).ready(function() {
     $('#bold_button').click(function() {
 	var range = window.getSelection().getRangeAt(0);
 	// bold/unbold only the selected text range
+	var font_weight = 'bold';
 	if ( range.toString().length ) {
-	    alert('only handles when nothing is selected right now, sorry!');
+	    var allWithinRangeParent = range.commonAncestorContainer.childNodes;
+	    var startNode = range.startContainer;
+	    var endNode = range.endContainer;
+	    console.log('start: '+ startNode.textContent);
+	    console.log('end:' + endNode.textContent);
+	    // start & end are equal nodes. still have to include a span around the interior for the specified text.
+	    if ( startNode.isEqualNode(endNode) ) {
+		if ( startNode.parentElement.style.fontWeight == 'bold' ) {
+		    font_weight = 'normal';
+		}
+		startNode.parentElement.style.fontWeight=font_weight;
+	    }
 	}
 	// If no selection do all (just for dev purposes).
 	else {
-	    var font_weight = 'bold';
 	    if ( $('#editor_div').css('font-weight') > 400 ) {
 		font_weight = 'normal';
 	    }
